@@ -17,7 +17,8 @@ class Verify extends CI_Controller
 		// first of all we need to make sure we are in a development environment or at least that
 		// this controller can be seen only by your IP address
 		// (you'll have to replace XXX.XXX.XXX with your IP address, of course)
-		if (ENVIRONMENT !== 'development' || $_SERVER['REMOTE_ADDR'] == '127.0.0.4') {
+		// if (ENVIRONMENT !== 'development' || $_SERVER['REMOTE_ADDR'] == '127.0.0.4') {
+        if (ENVIRONMENT == 'production') {
 			$this->load->helper('url');
 			redirect('/');
 		}

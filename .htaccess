@@ -1,7 +1,8 @@
 RewriteEngine On
 SetEnvIf Host learnci.io$ CI_ENV=production
 #SetEnvIf Host test.learnci.io$ CI_ENV=testing
-SetEnvIf Host localhost$ CI_ENV=development
+SetEnvIf Host 127.0.0.4$ CI_ENV=testing
+SetEnvIf Host 127.0.0.3$ CI_ENV=development
 
 <IfModule mod_rewrite.c>
     RewriteEngine On

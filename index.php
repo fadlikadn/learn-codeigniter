@@ -53,7 +53,23 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	// define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+
+	if(! defined('ENVIRONMENT') )
+	{
+	  $domain = strtolower($_SERVER['HTTP_HOST']);
+	  switch($domain) {
+	    case 'learnci.io' :
+	      define('ENVIRONMENT', 'production');
+	    break;
+	    case '127.0.0.4' :
+	      define('ENVIRONMENT', 'testing');
+	    break;
+	    default :
+	      define('ENVIRONMENT', 'development');
+	    break;
+	  }
+	}
 
 /*
  *---------------------------------------------------------------
