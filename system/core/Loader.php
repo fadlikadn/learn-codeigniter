@@ -1381,4 +1381,25 @@ class CI_Loader {
 		}
 	}
 
+	public function get_loaded_classes() 
+	{
+		return $this->_ci_classes;
+	}
+
+	public function get_loaded_helpers() 
+	{
+		$loaded_helpers = array();
+		if (sizeof($this->_ci_helpers) !== 0) {
+			foreach ($this->_ci_helpers as $key => $value) {
+				$loaded_helpers[] = $key;
+			}
+		}
+		return $loaded_helpers;
+	}
+
+	public function get_loaded_models()
+	{
+		return $this->_ci_models;
+	}
+
 }
