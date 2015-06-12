@@ -1,9 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-include_once(APPPATH.'core/Admin_Controller.php');
+// include_once(APPPATH.'core/Admin_Controller.php');
+include_once(APPPATH.'core/MY_Controller.php');
 
-class Welcome extends Admin_Controller {
+class Welcome extends MY_Controller {
+
+	function __construct() 
+	{
+		parent::__construct();
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -22,7 +28,9 @@ class Welcome extends Admin_Controller {
 	 */
 	public function index()
 	{
-		$data['page_title'] = 'Put first CodeIgniter application';
-		$this->load->view('welcome_message', $data);
+		// $this->load->view('welcome_message', $this->data);
+		// parent::render();
+		$this->render('homepage_view');
+		// $this->render();
 	}
 }
