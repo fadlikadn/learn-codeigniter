@@ -96,7 +96,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -501,3 +501,14 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*Load My own MY_Controllers*/
+function my_own_controllers($class) {
+	if (strpos($class, 'CI_') !== 0) {
+		if (is_readable(APPPATH.'core/'.$class.'.php')) {
+			require_once(APPPATH.'core/'.$class.'.php');
+		}
+	}
+}
+
+spl_autoload_register('my_own_controllers');

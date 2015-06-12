@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+include_once(APPPATH.'core/Admin_Controller.php');
+
+class Welcome extends Admin_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,7 +22,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['page_title'] = 'Pur first CodeIgniter application';
+		$data['page_title'] = 'Put first CodeIgniter application';
 		$this->load->view('welcome_message', $data);
 	}
 }
