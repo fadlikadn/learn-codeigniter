@@ -49,4 +49,20 @@ class Welcome extends MY_Controller {
 		$this->em->persist($user);
 		$this->em->flush();
 	}
+
+	public function getUsers()
+	{
+		// get an user by ID
+		$user = $this->em->find('Entities\User', 2);
+		if (!is_null($user)) {
+			echo $user->getUsername().' '.$user->getEmail().'<br/>';
+		} else {
+			echo 'User not found';
+		}		
+
+		$user = $this->em->getRepository('Entities\User')->findOneBy(array('email' => 'fadlikadn@gmail.com'));
+		if (!is_null($user)) {
+			echo $user->getEmail().'<br/>';
+		}
+	}
 }

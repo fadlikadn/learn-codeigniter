@@ -143,4 +143,3 @@ class User
         return $this->group;
     }
 }
-
