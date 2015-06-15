@@ -40,27 +40,107 @@ class User
 	* @JoinColumn(name="group_id", referencedColumnName="id")
 	*/
 	protected $group;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set group
+     *
+     * @param \Entities\Group $group
+     * @return User
+     */
+    public function setGroup(\Entities\Group $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \Entities\Group 
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
 }
 
-/**
-* @Entity @Table(name="group")
-*/
-class Group
-{
-	/**
-	* @Id
-	* @Column(type="integer", nullable=false)
-	* @GeneratedValue(strategy="AUTO")
-	*/
-	protected $id;
-
-	/**
-	* @Column(type="string", length=32, unique=true, nullable=false)
-	*/
-	protected $name;
-
-	/**
-	* @OneToMany(targetEntity="User", mappedBy="group")
-	*/
-	protected $users;
-}

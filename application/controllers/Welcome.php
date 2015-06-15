@@ -33,4 +33,20 @@ class Welcome extends MY_Controller {
 		$this->render('homepage_view');
 		// $this->render();
 	}
+
+	public function createNewUser() 
+	{
+		$user = new Entities\User;
+		// $user->setUsername('fadlikadn');
+		// $user->setPassword('mitrais');
+		// $user->setEmail('fadlikadn@gmail.com');
+
+		$user->setUsername('fauzan');
+		$user->setPassword('ugm');
+		$user->setEmail('fauzan@gmail.com');
+
+
+		$this->em->persist($user);
+		$this->em->flush();
+	}
 }
