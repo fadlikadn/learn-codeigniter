@@ -5,11 +5,17 @@
 */
 class MY_Controller extends CI_Controller
 {
+	// Doctrine EntityManager
+	public $em;
+
 	protected $data = array();
+
 	function __construct()
 	{
 		parent::__construct();
 		$this->data['page_title'] = 'CodeIgniter Application';
+
+		$this->em = $this->doctrine->em;
 	}
 
 	// Render template view, using more than one template
