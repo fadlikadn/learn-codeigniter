@@ -18,6 +18,19 @@ class User extends MY_Controller
 
 	}
 
+	public function addDummyUser($username, $password, $email)
+	{
+		$user = new Entities\User();
+		$user->setUsername($username);
+		$user->setPassword($password);
+		$user->setEmail($email);
+
+		$this->em->persist($user);
+		$this->em->flush();
+
+		echo "Created User with ID ".$user->getId()."<br/>";
+	}
+
 	public function get_single($id) 
 	{
 		try {

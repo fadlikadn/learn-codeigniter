@@ -17,10 +17,10 @@ class Product extends MY_Controller
 
 	}
 
-	public function addNew()
+	public function addNew($name)
 	{
 		$product = new Entities\Product();
-		$product->setName('Soklin');
+		$product->setName($name);
 
 		try {
 			$this->em->persist($product);

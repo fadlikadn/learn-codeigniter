@@ -42,6 +42,18 @@ class User
 	protected $group;
 
     /**
+     * @OneToMany(targetEntity="Bug", mappedBy="reporter")
+     * @var Bug[]
+     */
+    private $reportedBugs = null;
+
+    /**
+     * @OneToMany(targetEntity="Bug", mappedBy="engineer")
+     * @var Bug[]
+     */
+    private $assignedBugs = null;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -141,5 +153,21 @@ class User
     public function getGroup()
     {
         return $this->group;
+    }
+
+    public function __construct()
+    {
+        $this->reportedBugs = new ArrayCollection();
+        $this->assignedBugs = new ArrayCollection();
+    }
+
+    public function addReportedBug($bug)
+    {
+        $this->reportedBugs[] = $bug;
+    }
+
+    public function assignedToBug($bug)
+    {
+        $this->assignedBugs[] = $bug;
     }
 }
