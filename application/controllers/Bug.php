@@ -95,6 +95,42 @@ class Bug extends MY_Controller
 			echo "Engineer: ".$bug->getEngineer()->getUsername()."<br/>";
 		}
 	}
+
+	public function dashboard($id)
+	{
+		$dql = "SELECT b, e, r FROM Entities\Bug b JOIN b.engineer e JOIN b.reporter r ".
+				"WHERE b.status = 'OPEN' AND (e.id = ?1 OR r.id = ?1) ORDER BY b.created DESC";
+
+		$mybugs = $this->em->createQuery($dql)
+							->setParameter(1, $id)
+							->setMaxResults(15)
+							->getResult();
+
+		echo "You have created or assigned to ".count($mybugs)." open bugs:<br/><br/>";
+
+		foreach ($mybugs as $bug) {
+			echo $bug->getId()." - ".$bug->getDescription()."<br/>";
+		}
+	}
+
+	public function numberbugs()
+	{
+		$dql = "SELECT p.id, p.name, count(b.id) AS openBugs FROM Entities\Bug b ".
+				"JOIN b.products p WHERE b.status = 'OPEN' GROUP BY p.id";
+		$productBugs = $this->em->createQuery($dql)->getScalarResult();
+
+		foreach ($productBugs as $productBug) {
+			echo $productBug['name']." has ".$productBug['openBugs']." 	open bugs!<br/>";
+		}
+	}
+
+	public function close($id)
+	{
+		$bug = $this->em->find("Entities\Bug", (int) $id);
+		$bug->close();
+
+		$this->em->flush();
+	}
 }
 
 ?>
