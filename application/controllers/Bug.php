@@ -67,6 +67,22 @@ class Bug extends MY_Controller
 		}
 	}
 
+	public function select_repository()
+	{
+		$bugs = $this->em->getRepository('Entities\Bug')->getRecentBugs();
+
+		echo "<br/>";
+		foreach ($bugs as $bug) {
+			echo $bug->getDescription()." - ".$bug->getCreated()->format('d.m.y')."<br/>";
+			echo "     Reported by: ".$bug->getReporter()->getUsername()."<br/>";
+			echo "     Assigned to: ".$bug->getEngineer()->getUsername()."<br/>";
+			foreach ($bug->getProducts() as $product) {
+				echo "     Platform: ".$product->getName()."<br/>";
+			}
+			echo "<br/>";
+		}
+	}
+
 	public function select_array()
 	{
 		$dql = "SELECT b, e, r, p FROM Entities\Bug b JOIN b.engineer e".
