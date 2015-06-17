@@ -27,6 +27,7 @@ Support RESTful API using CodeIgniter (Update 17 June 2015)
 -  `Example of using CodeIgniter RestServer Library <https://github.com/awhitney42/codeigniter-restserver-resources>`_
 -  `How To Handling Request RestServer <https://github.com/chriskacerguis/codeigniter-restserver#handling-requests>`_
 -  `RESTful API Design Implementation using CodeIgniter <http://www.slideshare.net/appleboy/restful-api-design-implementation-with-codeigniter-php-framework?related=1>`_
+-  `REST API Best Practice <http://www.slideshare.net/sachingk30/rest-api-best-practices-implementing-in-codeigniter>`_
 -  `RESTful Service with CodeIgniter Part 1 <http://outergalactic.org/blog/restful-services-with-codeigniter/>`_
 -  `RESTful Service with CodeIgniter Part 2 <http://adamwhitney.net/blog/?p=707>`_
 
