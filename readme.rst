@@ -20,7 +20,7 @@ Resources
 -  `Getting Started using Doctrine <http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html>`_
 
 Example of Apache Configuration :
-```conf
+```bash
 <VirtualHost 127.0.0.3:80>
 	ServerName learnci.io/
 	#ServerAlias test.learnci.io
