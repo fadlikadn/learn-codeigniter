@@ -19,6 +19,32 @@ Resources
 -  `Example of using Doctrine with CodeIgniter <http://joelverhagen.com/blog/2011/05/setting-up-codeigniter-2-with-doctrine-2-the-right-way/>`_
 -  `Getting Started using Doctrine <http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html>`_
 
+
+*********
+Support RESTful API using CodeIgniter (Update 17 June 2015)
+*********
+-  `Codeigniter RestServer Library <https://github.com/chriskacerguis/codeigniter-restserver>`_
+-  `Example of using CodeIgniter RestServer Library <https://github.com/awhitney42/codeigniter-restserver-resources>`_
+-  `How To Handling Request RestServer <https://github.com/chriskacerguis/codeigniter-restserver#handling-requests >`_
+-  `RESTful API Design Implementation using CodeIgniter <http://www.slideshare.net/appleboy/restful-api-design-implementation-with-codeigniter-php-framework?related=1>`_
+-  `RESTful Service with CodeIgniter Part 1 <http://outergalactic.org/blog/restful-services-with-codeigniter/>`_
+-  `RESTful Service with CodeIgniter Part 2 <http://adamwhitney.net/blog/?p=707>`_
+
+*********
+Sample Call RESTful API Service
+*********
+-  http://127.0.0.3/Example/users
+-  http://127.0.0.3/Example/user?id=1 
+-  http://127.0.0.3/Example/user?id=3&format=xml 
+-  http://127.0.0.3/Example/user?id=3&format=csv
+
+*********
+Future Plan
+*********
+-  Integrating CodeIgniter and Doctrine ORM
+
+
+
 Example of Apache Configuration :
 
 `

@@ -52,3 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
+// $route['api/([a-z0-9]+)/(\d+)'] = "api/$1/index/$2";
+// $route['api/([a-z0-9]+)/(\d+)'] = "$1/index/$2";
