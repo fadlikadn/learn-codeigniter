@@ -1,3 +1,19 @@
+#############################
+CodeIgniter with Doctrine ORM
+#############################
+
+This repository use to give example integration between CodeIgniter 3 and Doctrine ORM.
+
+*********
+Resources
+*********
+-  `Integrating CodeIgniter 3 with Doctrine ORM <http://blog.beheist.com/integrating-codeigniter-and-doctrine-2-orm-with-composer/>`_
+-  `Load Doctrine library every load Controller <http://wildlyinaccurate.com/integrating-doctrine-2-with-codeigniter-2/>`_
+-  `Example of using Doctrine with CodeIgniter <http://joelverhagen.com/blog/2011/05/setting-up-codeigniter-2-with-doctrine-2-the-right-way/>`_
+-  `Getting Started using Doctrine <http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html>`_
+
+
+
 ###################
 What is CodeIgniter
 ###################
