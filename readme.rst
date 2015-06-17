@@ -7,8 +7,8 @@ This repository use to give example integration between CodeIgniter 3 and Doctri
 *********
 Stage
 *********
--  `Development : 127.0.0.3`_
--  `Testing : 127.0.0.4`_
+-  `Development : 127.0.0.3`
+-  `Testing : 127.0.0.4`
 -  `Production : learnci.io`
 
 *********
