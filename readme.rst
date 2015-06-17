@@ -5,6 +5,13 @@ CodeIgniter with Doctrine ORM
 This repository use to give example integration between CodeIgniter 3 and Doctrine ORM.
 
 *********
+Stage
+*********
+-  `Development : 127.0.0.3`_
+-  `Testing : 127.0.0.4`_
+-  `Production : learnci.io`
+
+*********
 Resources
 *********
 -  `Integrating CodeIgniter 3 with Doctrine ORM <http://blog.beheist.com/integrating-codeigniter-and-doctrine-2-orm-with-composer/>`_
@@ -12,6 +19,58 @@ Resources
 -  `Example of using Doctrine with CodeIgniter <http://joelverhagen.com/blog/2011/05/setting-up-codeigniter-2-with-doctrine-2-the-right-way/>`_
 -  `Getting Started using Doctrine <http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html>`_
 
+Example of Apache Configuration :
+```conf
+<VirtualHost 127.0.0.3:80>
+	ServerName learnci.io/
+	#ServerAlias test.learnci.io
+	ServerAdmin admin@learnci.io
+	DocumentRoot /home/fadlika/Documents/learncodeigniter
+	#DocumentRoot /var/www/learncodeigniter
+
+	<Directory /home/fadlika/Documents/learncodeigniter>
+	#<Directory /var/www/learncodeigniter>
+		# This relaxes Apache security settings.
+		AllowOverride all
+		
+		# MultiViews must be turned off.
+		Options -MultiViews
+		Allow from all
+		# Uncomment this if you're on Apache >= 2.4:
+		Require all granted
+		PassengerBufferResponse off
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+	#Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+
+<VirtualHost 127.0.0.4:80>
+	ServerName learnci2.io/
+	ServerAdmin admin@learnci2.io
+	DocumentRoot /home/fadlika/Documents/learncodeigniter
+	#DocumentRoot /var/www/learncodeigniter
+
+	<Directory /home/fadlika/Documents/learncodeigniter>
+	#<Directory /var/www/learncodeigniter>
+		# This relaxes Apache security settings.
+		AllowOverride all
+		
+		# MultiViews must be turned off.
+		Options -MultiViews
+		Allow from all
+		# Uncomment this if you're on Apache >= 2.4:
+		Require all granted
+		PassengerBufferResponse off
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+	#Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+
+```
 
 
 ###################
