@@ -181,6 +181,13 @@ abstract class REST_Controller extends CI_Controller
     protected $_apiuser;
 
     /**
+     * Variable to store Entity Manager
+     * 
+     * @var object
+     */
+    protected $em;
+
+    /**
      * Developers can extend this class and add a check in here.
      */
     protected function early_checks()
@@ -325,6 +332,9 @@ abstract class REST_Controller extends CI_Controller
                 $this->_check_whitelist_auth();
             }
         }
+
+        // Load Doctrine Library
+        $this->em = $this->doctrine->em;
     }
 
     /**

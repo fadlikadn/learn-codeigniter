@@ -86,11 +86,12 @@ class Example extends REST_Controller
 	public function users_get()
 	{
 		// $users = $this->some_model->getSomething($this->get('limit'));
-		$users = array(
-			array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
-			array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
-		);
+		$users = $this->users_model->get_users();
+		// $users = array(
+		// 	array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
+		// 	array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
+		// 	3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
+		// );
 
 		if ($users) 
 		{
