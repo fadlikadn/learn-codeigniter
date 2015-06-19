@@ -44,6 +44,12 @@ Future Plan
 *********
 -  Integrating CodeIgniter and Doctrine ORM
 
+*********
+CodeIgniter & AngularJS Integration
+*********
+
+Visit http://localhost/app/Template, it will be redirect to http://localhost/app/Template#/home
+
 
 
 Example of Apache Configuration :
