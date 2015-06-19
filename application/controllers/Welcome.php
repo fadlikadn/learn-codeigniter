@@ -28,7 +28,8 @@ class Welcome extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message', $this->data);
+		// $this->load->view('welcome_message', $this->data);
+		$this->load->view('todo/index');
 		// parent::render();
 		// $this->render('homepage_view');
 		// $this->render();

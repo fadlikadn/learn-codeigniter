@@ -1,0 +1,17 @@
+{
+  "name": "CodeIgniter Front End Component",
+  "version": "2.0.0",
+  "homepage": "https://github.com/fadlikadn/learn-codeigniter",
+  "authors": [
+    "Fadlika Dita Nurjanto <fadlikadn@gmail.com>"
+  ],
+  "description": "store front-end component",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
