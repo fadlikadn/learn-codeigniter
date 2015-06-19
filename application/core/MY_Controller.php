@@ -35,6 +35,18 @@ class MY_Controller extends CI_Controller
 			$this->data['the_view_content'] = (is_null($the_view)) ? '' : $this->load->view($the_view, $this->data, TRUE);
 			$this->load->view('templates/'.$template.'_view', $this->data);
 		}
-			
+	}
+
+	protected function render_library($the_view = NULL, $template = 'master_library')
+	{
+		if (is_null($template)) 
+		{
+			$this->load->view($the_view, $this->data);
+		}
+		else
+		{
+			$this->data['the_view_content'] = (is_null($the_view)) ? '' : $this->load->view($the_view, $this->data, TRUE);
+			$this->load->view('templates/'.$template.'_view', $this->data);
+		}
 	}
 }
