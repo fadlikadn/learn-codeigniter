@@ -3,6 +3,8 @@
 namespace Entities;
 // src/Product.php
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
 * @Entity @Table(name="products")
 **/

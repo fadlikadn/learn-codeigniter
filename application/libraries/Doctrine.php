@@ -45,8 +45,9 @@ class Doctrine {
 		$config->setProxyNamespace('Proxies');
 
 		// Set up logger
-		$logger = new EchoSQLLogger;
-		$config->setSQLLogger($logger);
+		// Disable when development and production, enable when testing
+		// $logger = new EchoSQLLogger;
+		// $config->setSQLLogger($logger);
 
 		$config->setAutoGenerateProxyClasses(TRUE);
 

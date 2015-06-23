@@ -36,6 +36,15 @@ class Product extends MY_Controller
 		$productRepository = $this->em->getRepository('Entities\Product');
 		$products = $productRepository->findAll();
 
+		// $products->toJSON();
+		// $vararray = is_array($products);
+		// echo $vararray;
+		// $jsonproduct = json_encode($products->getResult());
+		// echo $jsonproduct;
+
+		// $data['json'] = $products->fetchArray();
+		// $this->load->view('json/json_view', $data);
+
 		foreach ($products as $product) {
 			echo sprintf("-%s\n", $product->getName()."<br/>");
 		}
