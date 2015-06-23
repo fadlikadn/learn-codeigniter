@@ -42,41 +42,48 @@ class Product extends REST_Controller
 	public function index_post()
 	{
 		// $this->em = $this->doctrine->em;
-		echo $this->doctrine->em->getConnection()->getDatabase();
-		
+		// echo $this->doctrine->em->getConnection()->getDatabase();
+		if (!$this->post('id')) 
+		{
+			// Insert Data
+			$product = new Entities\Product();
+		}
+		else 
+		{
+			// Update Data
+			$product = $this->em->find('Entities\Product', $this->post('id'));
+		}
+
 		if (!$this->post('name'))
 		{
 			$this->response(array('error' => 'User could not be found'), 404);
 		} 
 		else
 		{
-			$product = new Entities\Product();
 			$product->setName($this->post('name'));
-			// echo $product->getName();
 
-			// echo $this->em->getConnection();
-
-			$this->em->persist($product);
-			$this->em->flush();
-
-			// try {
-			// 	$this->em->persist($product);
-			// 	$this->em->flush();
-			// } catch (Exception $e) {
-			// 	$this->response(array('error' => 'User could not be processed'), 404);
-			// }
-
-			// $this->response($product, 200);
+			try {
+				$this->em->persist($product);
+				$this->em->flush();
+				// $productjson = $product->exportTo('json');
+				// $this->response($product, 200);
+				$this->response(array('id' => $product->getId(), 
+										'name' => $product->getName()), 200);
+			} catch (Exception $e) {
+				$this->response(array('error' => 'User could not be processed'), 404);
+			}	
 		}
 	}
 
-	public function index_put()
-	{
-
-	}
-
+	public function index_put(){}
 	public function index_update(){}
-	public function index_delete(){}
+	public function index_delete()
+	{
+		//$this->some_model->deletesomething( $this->get('id') );
+		echo $this->get('id');
+ 		$message = array('id' => $this->get('id'), 'message' => 'DELETED!');     
+		$this->response($message, 200); // 200 being the HTTP response code
+	}
 }
 
 /* End of file Product.php */

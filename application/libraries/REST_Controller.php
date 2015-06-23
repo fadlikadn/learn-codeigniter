@@ -1099,6 +1099,29 @@ abstract class REST_Controller extends CI_Controller
         if ($this->input->method() == 'delete') {
             $this->_delete_args = $this->input->input_stream();
         }
+
+        // $query = $_SERVER['QUERY_STRING'];
+        // if ( !empty( $query ) )
+        // {
+        //     foreach( explode('&', $query ) as $param )
+        //     {
+        //         list($k, $v) = explode('=', $param);
+        //         $k = urldecode($k);
+        //         $v = urldecode($v);
+        //         if ( isset( $this->_delete_args[$k] ) )
+        //         {
+        //             if ( is_scalar( $this->_delete_args[$k] ) )
+        //             {
+        //                 $this->_delete_args[$k] = array( $this->_delete_args[$k] );
+        //             }
+        //             $this->_delete_args[$k][] = $v ;
+        //         }
+        //         else
+        //         {
+        //             $this->_delete_args[$k] = $v;
+        //         }
+        //     }
+        // }
     }
 
     // INPUT FUNCTION --------------------------------------------------------------
