@@ -41,8 +41,6 @@ class Product extends REST_Controller
 
 	public function index_post()
 	{
-		// $this->em = $this->doctrine->em;
-		// echo $this->doctrine->em->getConnection()->getDatabase();
 		if (!$this->post('id')) 
 		{
 			// Insert Data
@@ -65,8 +63,6 @@ class Product extends REST_Controller
 			try {
 				$this->em->persist($product);
 				$this->em->flush();
-				// $productjson = $product->exportTo('json');
-				// $this->response($product, 200);
 				$this->response(array('id' => $product->getId(), 
 										'name' => $product->getName()), 200);
 			} catch (Exception $e) {
@@ -79,10 +75,27 @@ class Product extends REST_Controller
 	public function index_update(){}
 	public function index_delete()
 	{
-		//$this->some_model->deletesomething( $this->get('id') );
-		echo $this->get('id');
- 		$message = array('id' => $this->get('id'), 'message' => 'DELETED!');     
-		$this->response($message, 200); // 200 being the HTTP response code
+		if (!$_POST['id']) 
+		{
+			$this->response(array('error' => 'User could not be processed'), 404);
+		}
+		else
+		{
+			$product = $this->em->find('Entities\Product', $_POST['id']);
+
+			if ($product) 
+			{
+				$this->em->remove($product);
+				$this->em->flush();
+				$message = array('id' => $_POST['id'], 'message' => 'DELETED!');
+				$this->response($message, 200);
+			}
+			else
+			{
+				$message = array('id' => $_POST['id'], 'error' => 'User not found!');
+				$this->response($message, 404);
+			}
+		}
 	}
 }
 
